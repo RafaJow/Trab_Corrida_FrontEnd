@@ -12,6 +12,16 @@ export class AtletasService {
 
   constructor(private http: HttpClient) { }
 
+  pesquisar(filtro: any): Promise<any>{
+    if(filtro.nome){
+      this.urlFiltro = 'http://localhost:8090/atletas/filtro?nome='+filtro.nome;
+    }else{
+      this.urlFiltro = 'http://localhost:8090/atletas';
+    }
+
+    return this.http.get<any>(this.urlFiltro).toPromise();
+  }
+
   excluir(id:number):Promise<void>{
     return this.http.delete(this.atletasURL+'/'+id)
     .toPromise()
