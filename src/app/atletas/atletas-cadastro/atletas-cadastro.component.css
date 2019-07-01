@@ -1,0 +1,10 @@
+.boxButton{
+  margin: 2px;
+}
+
+input[name=idade] {
+  width: 5%;
+  margin: 2px;
+  box-sizing: border-box;
+}
+

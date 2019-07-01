@@ -2,6 +2,8 @@ import { AtletasService } from './atletas.service';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AtletasPesquisaComponent } from './atletas-pesquisa/atletas-pesquisa.component';
 import { AtletasCadastroComponent } from './atletas-cadastro/atletas-cadastro.component';
@@ -12,10 +14,10 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
-import { FormsModule } from '@angular/forms';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
-import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [AtletasPesquisaComponent, AtletasCadastroComponent],
@@ -28,7 +30,8 @@ import { RouterModule } from '@angular/router';
     ToastModule,
     FormsModule,
     ConfirmDialogModule,
-    RouterModule
+    RouterModule,
+    RadioButtonModule
   ],
   exports:[
     AtletasPesquisaComponent,

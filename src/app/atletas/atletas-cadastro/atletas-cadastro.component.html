@@ -1,3 +1,28 @@
-<p>
-  atletas-cadastro works!
-</p>
+<p-toast></p-toast>
+
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <h1>{{editando ? 'Edição de ': 'Nova '}} Atleta</h1>
+      </div>
+
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <h3 >Nome</h3>
+        <input pInputText type="text" name="nome"
+          [(ngModel)]="atleta.nome" #nome="ngModel" required minlength="3">
+
+        <h3 >Idade</h3>
+        <input pInputText type="text" name="idade"
+          [(ngModel)]="atleta.idade" #idade="ngModel">
+
+        <h3>Sexo</h3>
+        <div class="ui-g">
+          <div class="ui-g-12"><p-radioButton name="group1" value="M" label="Masculino" [(ngModel)]="atleta.sexo" inputId="opt1"></p-radioButton></div>
+          <div class="ui-g-12"><p-radioButton name="group1" value="F" label="Feminino" [(ngModel)]="atleta.sexo" inputId="opt2"></p-radioButton></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -4,9 +4,10 @@ import { AtletasService } from '../atletas.service';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { FormControl } from '@angular/forms';
+
 
 
 
