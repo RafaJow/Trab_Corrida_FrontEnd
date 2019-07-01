@@ -1,6 +1,6 @@
-import { AtletasService } from './atletas.service';
-import { AtletasPesquisaComponent } from './atletas-pesquisa/atletas-pesquisa.component';
-import { AtletasCadastroComponent } from './atletas-cadastro/atletas-cadastro.component';
+import { EventosService } from './eventos.service';
+import { EventosPesquisaComponent } from './eventos-pesquisa/eventos-pesquisa.component';
+import { EventosCadastroComponent } from './eventos-cadastro/eventos-cadastro.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,12 +14,10 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import {RadioButtonModule} from 'primeng/radiobutton';
-
-
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
-  declarations: [AtletasPesquisaComponent, AtletasCadastroComponent],
+  declarations: [EventosPesquisaComponent, EventosCadastroComponent],
   imports: [
     CommonModule,
     InputTextModule,
@@ -30,15 +28,15 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     FormsModule,
     ConfirmDialogModule,
     RouterModule,
-    RadioButtonModule
+    CalendarModule
   ],
   exports:[
-    AtletasPesquisaComponent,
-    AtletasCadastroComponent
+    EventosPesquisaComponent,
+    EventosCadastroComponent
   ],
   providers:[
-    AtletasService,
+    EventosService,
     MessageService
   ]
 })
-export class AtletasModule { }
+export class EventosModule { }

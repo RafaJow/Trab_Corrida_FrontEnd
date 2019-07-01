@@ -2,6 +2,8 @@ import { AtletasCadastroComponent } from './atletas/atletas-cadastro/atletas-cad
 import { Atleta } from './atletas/model';
 import { AtletasPesquisaComponent } from './atletas/atletas-pesquisa/atletas-pesquisa.component';
 import { AtletasModule } from './atletas/atletas.module';
+import { EventosPesquisaComponent } from './eventos/eventos-pesquisa/eventos-pesquisa.component';
+import { EventosCadastroComponent } from './eventos/eventos-cadastro/eventos-cadastro.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,11 +16,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { ConfirmationService } from 'primeng/api';
+import { EventosModule } from './eventos/eventos.module';
 
 const rotas: Routes = [
   {path: 'atletas', component: AtletasPesquisaComponent},
   {path: 'atletas/:id', component: AtletasCadastroComponent},
-  {path: 'atletas/novo', component: AtletasCadastroComponent}
+  {path: 'atletas/novo', component: AtletasCadastroComponent},
+  {path: 'eventos', component: EventosPesquisaComponent},
+  {path: 'eventos/:id', component: EventosCadastroComponent},
+  {path: 'eventos/novo', component: EventosCadastroComponent}
 ];
 
 @NgModule({
@@ -30,6 +36,7 @@ const rotas: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     AtletasModule,
+    EventosModule,
     HttpClientModule,
     RouterModule.forRoot(rotas),
     RadioButtonModule

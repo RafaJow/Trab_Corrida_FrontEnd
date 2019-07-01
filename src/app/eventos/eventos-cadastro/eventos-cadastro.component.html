@@ -1,0 +1,27 @@
+<p-toast></p-toast>
+
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <h1>{{editando ? 'Edição de ': 'Novo '}} Evento</h1>
+      </div>
+
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <h3 >Nome</h3>
+        <input pInputText type="text" name="nome"
+          [(ngModel)]="evento.nome" #nome="ngModel" required minlength="3">
+
+        <h3 >Cidade</h3>
+        <input pInputText type="text" name="cidade"
+          [(ngModel)]="evento.cidade" #idade="ngModel">
+
+        <h3>Data</h3>
+        <p-calendar [(ngModel)]="evento.data"></p-calendar>
+
+
+      </div>
+    </div>
+  </form>
+</div>

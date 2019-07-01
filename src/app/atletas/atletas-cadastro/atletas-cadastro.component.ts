@@ -9,9 +9,6 @@ import { FormControl } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 
 
-
-
-
 @Component({
   selector: 'app-atletas-cadastro',
   templateUrl: './atletas-cadastro.component.html',
