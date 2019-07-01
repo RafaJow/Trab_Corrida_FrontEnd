@@ -1,6 +1,7 @@
 import { AtletasService } from './../atletas.service';
 import { Component, OnInit } from '@angular/core';
 import { MessageService, ConfirmationService } from 'primeng/api';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-atletas-pesquisa',
@@ -15,7 +16,7 @@ export class AtletasPesquisaComponent implements OnInit {
   constructor(
     private service:AtletasService,
     private msg:MessageService,
-    private conf: ConfirmationService
+    private conf:ConfirmationService
   ) { }
 
   pesquisar(){

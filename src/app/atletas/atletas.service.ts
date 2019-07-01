@@ -7,16 +7,16 @@ import { Atleta } from './model';
 })
 export class AtletasService {
 
-  atletasURL = 'http://localhost:8090/atletas';
+  atletasURL = 'http://localhost:8090/';
   urlFiltro;
 
   constructor(private http: HttpClient) { }
 
   pesquisar(filtro: any): Promise<any>{
     if(filtro.nome){
-      this.urlFiltro = 'http://localhost:8090/atletas/filtro?nome='+filtro.nome;
+      this.urlFiltro = this.atletasURL+'atletas/filtro?nome='+filtro.nome;
     }else{
-      this.urlFiltro = 'http://localhost:8090/atletas';
+      this.urlFiltro = this.atletasURL+'atletas';
     }
 
     return this.http.get<any>(this.urlFiltro).toPromise();
@@ -39,7 +39,7 @@ export class AtletasService {
   }
 
   buscarPorCodigo(codigo: number): Promise<Atleta> {
-    return this.http.get<Atleta>(this.atletasURL+'/'+codigo)
+    return this.http.get<Atleta>(this.atletasURL+'atletas/'+codigo)
     .toPromise();
   }
 }
