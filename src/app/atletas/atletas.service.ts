@@ -23,7 +23,7 @@ export class AtletasService {
   }
 
   excluir(id:number):Promise<void>{
-    return this.http.delete(this.atletasURL+'/'+id)
+    return this.http.delete(this.atletasURL+'atletas/'+id)
     .toPromise()
     .then(() => null);
   }
@@ -34,7 +34,7 @@ export class AtletasService {
   }
 
   alterar(atleta: Atleta): Promise<any>{
-    return this.http.put(this.atletasURL+'/'+atleta.id, atleta)
+    return this.http.put(this.atletasURL+'atletas/'+atleta.id, atleta)
     .toPromise();
   }
 
