@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { ConfirmationService } from 'primeng/api';
+import {CalendarModule} from 'primeng/calendar';
+
 import { EventosModule } from './eventos/eventos.module';
 
 const rotas: Routes = [
@@ -39,7 +41,8 @@ const rotas: Routes = [
     EventosModule,
     HttpClientModule,
     RouterModule.forRoot(rotas),
-    RadioButtonModule
+    RadioButtonModule,
+    CalendarModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
