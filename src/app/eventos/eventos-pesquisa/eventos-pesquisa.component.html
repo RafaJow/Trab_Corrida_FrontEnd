@@ -26,15 +26,20 @@
           <ng-template pTemplate="header">
             <tr>
               <th class="col-id-header">Id</th>
-              <th>Descrição</th>
-              <th class="col-acoes"></th>
+              <th class="col-nom">Descrição</th>
+              <th class="col-cid">Cidades</th>
+              <th class="col-data">Data</th>
+              <th class="col-acoes">Edit/Delete</th>
             </tr>
           </ng-template>
 
           <ng-template pTemplate="body" let-eve>
             <tr>
               <td class="col-id">{{eve.id}}</td>
-              <td class="col-acoes">{{eve.nome}}</td>
+              <td class="col-nom">{{eve.nome}}</td>
+              <td class="col-cid">{{eve.cidade}}</td>
+              <td class="col-data">{{eve.data}}</td>
+
               <td>
                 <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="1000" class="ui-button-info" [routerLink]="['/eventos', eve.id]"></button>
                 <button pButton icon="pi pi-trash" pTooltip="Apagar" tooltipPosition="top" showDelay="1000" class="ui-button-danger" (click)="confirmarExclusao(eve)"></button>

@@ -6,4 +6,5 @@ export class Evento{
   cidade: string;
   nome: string;
   categorias: Categoria[];
+
 }
