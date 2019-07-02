@@ -6,6 +6,7 @@ import { MessageService } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Categoria } from 'src/app/categorias/model';
 
 @Component({
   selector: 'app-eventos-cadastro',
@@ -15,6 +16,7 @@ import { FormControl } from '@angular/forms';
 export class EventosCadastroComponent implements OnInit {
 
   evento = new Evento();
+  categoria = new Categoria();
 
   constructor(
     private service: EventosService,

@@ -13,6 +13,9 @@
         <input pInputText type="text" name="nome"
           [(ngModel)]="evento.nome" #nome="ngModel" required minlength="3">
 
+        <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+        <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+
         <h3 >Cidade</h3>
         <input pInputText type="text" name="cidade"
           [(ngModel)]="evento.cidade" #idade="ngModel">
@@ -20,8 +23,15 @@
         <h3>Data</h3>
         <p-calendar [(ngModel)]="evento.data"></p-calendar>
 
+        </div>
 
-      </div>
+    <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+        <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" [routerLink]="['eventos/novo']"></button>
+        <a routerLink="/eventos">Voltar para a pesquisa</a>
+    </div>
+
+
     </div>
   </form>
 </div>

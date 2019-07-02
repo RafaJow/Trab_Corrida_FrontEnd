@@ -29,7 +29,7 @@ export class EventosService {
   }
 
   adicionar(evento: Evento): Promise<any>{
-    return this.http.post(this.eventosURL, evento)
+    return this.http.post(this.eventosURL+'eventos/', evento)
     .toPromise();
   }
 

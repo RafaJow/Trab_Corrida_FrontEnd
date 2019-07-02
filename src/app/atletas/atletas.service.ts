@@ -29,7 +29,7 @@ export class AtletasService {
   }
 
   adicionar(atleta: Atleta): Promise<any>{
-    return this.http.post(this.atletasURL, atleta)
+    return this.http.post(this.atletasURL+'atletas/', atleta)
     .toPromise();
   }
 
