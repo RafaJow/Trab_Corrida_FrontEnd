@@ -10,6 +10,8 @@ export class EventosService {
   eventosURL = 'http://localhost:8090/';
   urlFiltro;
 
+  categoriasURL = 'http://localhost:8090/categorias/novo'
+
   constructor(private http: HttpClient) { }
 
   pesquisar(filtro: any): Promise<any>{
@@ -37,6 +39,7 @@ export class EventosService {
     return this.http.put(this.eventosURL+'eventos/'+evento.id, evento)
     .toPromise();
   }
+
 
   buscarPorCodigo(codigo: number): Promise<Evento> {
     return this.http.get<Evento>(this.eventosURL+'eventos/'+codigo)

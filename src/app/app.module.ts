@@ -1,3 +1,4 @@
+import { CategoriasCadastroComponent } from './categorias/categorias-cadastro/categorias-cadastro.component';
 import { AtletasCadastroComponent } from './atletas/atletas-cadastro/atletas-cadastro.component';
 import { Atleta } from './atletas/model';
 import { AtletasPesquisaComponent } from './atletas/atletas-pesquisa/atletas-pesquisa.component';
@@ -15,10 +16,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {RadioButtonModule} from 'primeng/radiobutton';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, SelectItem } from 'primeng/api';
 import {CalendarModule} from 'primeng/calendar';
 
 import { EventosModule } from './eventos/eventos.module';
+import { CategoriasModule } from './categorias/categorias.module';
 
 const rotas: Routes = [
   {path: 'atletas', component: AtletasPesquisaComponent},
@@ -26,7 +28,8 @@ const rotas: Routes = [
   {path: 'atletas/novo', component: AtletasCadastroComponent},
   {path: 'eventos', component: EventosPesquisaComponent},
   {path: 'eventos/:id', component: EventosCadastroComponent},
-  {path: 'eventos/novo', component: EventosCadastroComponent}
+  {path: 'eventos/novo', component: EventosCadastroComponent},
+  {path: 'categorias/novo', component: CategoriasCadastroComponent}
 ];
 
 @NgModule({
@@ -39,10 +42,11 @@ const rotas: Routes = [
     BrowserAnimationsModule,
     AtletasModule,
     EventosModule,
+    CategoriasModule,
     HttpClientModule,
     RouterModule.forRoot(rotas),
     RadioButtonModule,
-    CalendarModule
+    CalendarModule,
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

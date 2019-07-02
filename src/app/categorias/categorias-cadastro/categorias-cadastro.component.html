@@ -1,3 +1,29 @@
-<p>
-  categorias-cadastro works!
-</p>
+<p-toast></p-toast>
+
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <h1>{{editando ? 'Edição de ': 'Nova '}} Categoria</h1>
+      </div>
+
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <h3 >Distancia</h3>
+        <input pInputText type="text" name="distancia"
+          [(ngModel)]="categoria.distancia" #distancia="ngModel" required minlength="1">
+
+          <div *ngIf="distancia.hasError('minlength')">O distancia deve ter no mínimo 1 caractare</div>
+      </div>
+
+
+      <div class="ui-g-12">
+       <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+       <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" [routerLink]="['categorias/novo']"></button>
+       <a routerLink="/eventos">Voltar para eventos</a>
+      </div>
+
+
+   </div>
+  </form>
+</div>

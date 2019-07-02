@@ -15,6 +15,8 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
+import {ListboxModule} from 'primeng/listbox';
 
 @NgModule({
   declarations: [EventosPesquisaComponent, EventosCadastroComponent],
@@ -28,7 +30,9 @@ import {CalendarModule} from 'primeng/calendar';
     FormsModule,
     ConfirmDialogModule,
     RouterModule,
-    CalendarModule
+    CalendarModule,
+    CheckboxModule,
+    ListboxModule
   ],
   exports:[
     EventosPesquisaComponent,

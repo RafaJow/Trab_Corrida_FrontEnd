@@ -1,12 +1,14 @@
+import { Categoria } from './../../categorias/model';
 import { Evento } from '../model';
 import { EventosService } from '../eventos.service';
 
-import { MessageService } from 'primeng/api';
+import { MessageService, SelectItem } from 'primeng/api';
 
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Categoria } from 'src/app/categorias/model';
+
+
 
 @Component({
   selector: 'app-eventos-cadastro',
@@ -16,13 +18,33 @@ import { Categoria } from 'src/app/categorias/model';
 export class EventosCadastroComponent implements OnInit {
 
   evento = new Evento();
-  categoria = new Categoria();
+  selectedCategorias: Categoria[];
+  categorias: SelectItem[];
+
+
+  //categorias: { label: string; value: { id: number; distancia: number; }; }[];
 
   constructor(
     private service: EventosService,
     private messageService: MessageService,
     private rota: ActivatedRoute
-  ) { }
+  ) {
+
+
+
+    this.categorias = [
+
+      {label:'Escolha uma categoria KM', value:null},
+      {label:'5 KM', value:{id:10, distancia:5}},
+      {label:'10 KM', value:{id:11, distancia:10}},
+      {label:'15 KM', value:{id:12, distancia:15}},
+      {label:'20 KM', value:{id:14, distancia:20}},
+      {label:'25 KM', value:{id:15, distancia:25}},
+      {label:'30 KM', value:{id:16, distancia:30}},
+
+    ]
+
+  }
 
   inserir(form: FormControl){
     this.service.adicionar(this.evento)
@@ -56,6 +78,8 @@ export class EventosCadastroComponent implements OnInit {
     });
   }
 
+
+
   salvar(form: FormControl){
     if(this.editando){
       this.alterar(form);
@@ -64,7 +88,10 @@ export class EventosCadastroComponent implements OnInit {
     }
   }
 
+
   get editando(){
     return Boolean(this.evento.id);
   }
 }
+
+

@@ -43,6 +43,7 @@
               <td>
                 <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="1000" class="ui-button-info" [routerLink]="['/eventos', eve.id]"></button>
                 <button pButton icon="pi pi-trash" pTooltip="Apagar" tooltipPosition="top" showDelay="1000" class="ui-button-danger" (click)="confirmarExclusao(eve)"></button>
+                <a pButton label="Adicionar Categoria" [routerLink]="['/categorias/novo']"></a>
               </td>
             </tr>
           </ng-template>
