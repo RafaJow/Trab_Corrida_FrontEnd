@@ -25,9 +25,11 @@
       </div>
 
         <h3 class="first">Escolha as categorias</h3>
-        <p-listbox [options]="categorias" [(ngModel)]="selectedCategorias" multiple="multiple" checkbox="checkbox" filter="filter" optionLabel="name" name="cates"
-        [ngModelOptions]="{standalone: true}" #cates="ngModel">
-            <span *ngFor="let c of selectedCategorias" style="margin-right: 10px">{{c.distancia}}</span>
+        <p-listbox [options]="categorias" [(ngModel)]="selectedCategorias" multiple="multiple" checkbox="checkbox" filter="filter"  name="cates"
+         #cates="ngModel">
+         <p-footer>
+          Selected: {{selectedCategorias | json}}
+         </p-footer>
         </p-listbox>
 
        <!-- [(ngModel)]="atleta.equipe" #equipe="ngModel">-->

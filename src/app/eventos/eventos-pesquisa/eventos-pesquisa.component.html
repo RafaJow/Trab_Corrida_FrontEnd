@@ -29,6 +29,7 @@
               <th class="col-nom">Descrição</th>
               <th class="col-cid">Cidades</th>
               <th class="col-data">Data</th>
+              <th class="col-cat">Categorias</th>
               <th class="col-acoes">Edit/Delete</th>
             </tr>
           </ng-template>
@@ -39,6 +40,7 @@
               <td class="col-nom">{{eve.nome}}</td>
               <td class="col-cid">{{eve.cidade}}</td>
               <td class="col-data">{{eve.data}}</td>
+              <td class="col-cat">{{eve.categorias | json}}</td>
 
               <td>
                 <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="1000" class="ui-button-info" [routerLink]="['/eventos', eve.id]"></button>

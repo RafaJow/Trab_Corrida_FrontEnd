@@ -34,7 +34,6 @@ export class EventosCadastroComponent implements OnInit {
 
     this.categorias = [
 
-      {label:'Escolha uma categoria KM', value:null},
       {label:'5 KM', value:{id:10, distancia:5.0}},
       {label:'10 KM', value:{id:11, distancia:10.0}},
       {label:'15 KM', value:{id:12, distancia:15.0}},
@@ -44,9 +43,11 @@ export class EventosCadastroComponent implements OnInit {
 
     ]
 
+    this.evento.categorias = this.selectedCategorias;
   }
 
   inserir(form: FormControl){
+
     this.service.adicionar(this.evento)
     .then( ()=>{
       this.messageService.add({severity:'success', summary:'Cadastro', detail:'Evento '+this.evento.nome+' Cadastrado'});
