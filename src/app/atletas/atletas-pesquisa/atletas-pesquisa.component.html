@@ -26,15 +26,19 @@
         <ng-template pTemplate="header">
           <tr>
             <th class="col-id-header">Id</th>
-            <th>Descrição</th>
-            <th class="col-acoes"></th>
+            <th class="col-nom">Nome</th>
+            <th class="col-equi">Equipe</th>
+            <th class="col-sex">Sexo</th>
+            <th class="col-acoes">Edit/Delete</th>
           </tr>
         </ng-template>
 
         <ng-template pTemplate="body" let-atl>
           <tr>
             <td class="col-id">{{atl.id}}</td>
-            <td class="col-acoes">{{atl.nome}}</td>
+            <td class="col-nom">{{atl.nome}}</td>
+            <td class="col-equi">{{atl.equipe}}</td>
+            <td class="col-sex">{{atl.sexo}}</td>
             <td>
               <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="1000" class="ui-button-info" [routerLink]="['/atletas', atl.id]"></button>
               <button pButton icon="pi pi-trash" pTooltip="Apagar" tooltipPosition="top" showDelay="1000" class="ui-button-danger" (click)="confirmarExclusao(atl)"></button>

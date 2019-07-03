@@ -10,8 +10,6 @@ export class EventosService {
   eventosURL = 'http://localhost:8090/';
   urlFiltro;
 
-  categoriasURL = 'http://localhost:8090/categorias/novo'
-
   constructor(private http: HttpClient) { }
 
   pesquisar(filtro: any): Promise<any>{

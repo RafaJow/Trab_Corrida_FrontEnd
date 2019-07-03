@@ -25,11 +25,12 @@
       </div>
 
         <h3 class="first">Escolha as categorias</h3>
-        <p-listbox [options]="categorias" [(ngModel)]="selectedCategorias" multiple="multiple" checkbox="checkbox" filter="filter" optionLabel="name">
+        <p-listbox [options]="categorias" [(ngModel)]="selectedCategorias" multiple="multiple" checkbox="checkbox" filter="filter" optionLabel="name" name="cates"
+        [ngModelOptions]="{standalone: true}" #cates="ngModel">
             <span *ngFor="let c of selectedCategorias" style="margin-right: 10px">{{c.distancia}}</span>
         </p-listbox>
 
-
+       <!-- [(ngModel)]="atleta.equipe" #equipe="ngModel">-->
 
       <div class="ui-g-12">
           <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>

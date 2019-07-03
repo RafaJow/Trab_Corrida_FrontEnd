@@ -35,12 +35,12 @@ export class EventosCadastroComponent implements OnInit {
     this.categorias = [
 
       {label:'Escolha uma categoria KM', value:null},
-      {label:'5 KM', value:{id:10, distancia:5}},
-      {label:'10 KM', value:{id:11, distancia:10}},
-      {label:'15 KM', value:{id:12, distancia:15}},
-      {label:'20 KM', value:{id:14, distancia:20}},
-      {label:'25 KM', value:{id:15, distancia:25}},
-      {label:'30 KM', value:{id:16, distancia:30}},
+      {label:'5 KM', value:{id:10, distancia:5.0}},
+      {label:'10 KM', value:{id:11, distancia:10.0}},
+      {label:'15 KM', value:{id:12, distancia:15.0}},
+      {label:'20 KM', value:{id:14, distancia:20.0}},
+      {label:'25 KM', value:{id:15, distancia:25.0}},
+      {label:'30 KM', value:{id:16, distancia:30.0}},
 
     ]
 

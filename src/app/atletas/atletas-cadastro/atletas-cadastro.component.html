@@ -17,12 +17,23 @@
         <input pInputText type="text" name="idade"
           [(ngModel)]="atleta.idade" #idade="ngModel">
 
+          <h3 >Equipe</h3>
+        <input pInputText type="text" name="equipe"
+          [(ngModel)]="atleta.equipe" #equipe="ngModel">
+
         <h3>Sexo</h3>
         <div class="ui-g">
           <div class="ui-g-12"><p-radioButton name="group1" value="M" label="Masculino" [(ngModel)]="atleta.sexo" inputId="opt1"></p-radioButton></div>
           <div class="ui-g-12"><p-radioButton name="group1" value="F" label="Feminino" [(ngModel)]="atleta.sexo" inputId="opt2"></p-radioButton></div>
         </div>
       </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+        <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" [routerLink]="['atletas/novo']"></button>
+        <a routerLink="/atletas">Voltar para atletas</a>
+       </div>
+
     </div>
   </form>
 </div>
